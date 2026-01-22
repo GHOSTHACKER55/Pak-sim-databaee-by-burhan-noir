@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,20 +6,7 @@
 <title>BURHAN NOIR DATABASE</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-/* --- RED CYBERPUNK THEME --- */
-:root {
-    --neon-red: #ff1a1a;        /* main neon red */
-    --neon-dark-red: #c70039;   /* darker red for shadows */
-    --neon-pink: #ff4d6d;       /* highlight/glow */
-    --matrix-red: #ff5555;      /* matrix rain */
-    --hacker-red: #ff0000;      /* errors/glitch */
-    --terminal-bg: #0a0a0a;     /* background */
-    --scanline-glow: rgba(255,0,0,0.2);
-    --glitch-red: rgba(255,0,0,0.8);
-    --glitch-blue: rgba(255,100,100,0.8);
-}
-
-/* --- WHATSAPP DARK GREEN BUTTONS (unchanged) --- */
+/* WHATSAPP DARK GREEN BUTTONS */
 .wa-dark {
     display: block;
     width: 100%;
@@ -44,20 +31,17 @@
     transform: translateY(-3px);
 }
 
-/* --- BODY & TERMINAL --- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
     font-family: 'Roboto Mono', monospace;
-    background: var(--terminal-bg);
-    color: var(--neon-red);
+    background: #0d0d0d; /* terminal background */
+    color: #ff0000;      /* red UI */
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
     cursor: crosshair;
 }
 
-/* MATRIX RAIN */
+/* MATRIX RAIN BACKGROUND */
 #matrix-bg {
     position: fixed;
     top: 0;
@@ -76,7 +60,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background:   
+    background:
         linear-gradient(90deg, transparent 49%, rgba(255,0,0,0.03) 50%, transparent 51%),
         linear-gradient(rgba(255,0,0,0.1) 50%, rgba(255,0,0,0.2) 51%),
         linear-gradient(90deg, transparent 49%, rgba(255,0,0,0.03) 50%, transparent 51%);
@@ -86,13 +70,13 @@ body::before {
     pointer-events: none;
 }
 
-/* CONTAINER */
+/* HACKER TERMINAL */
 .container {
-    background: rgba(40, 0, 0, 0.9);
-    border: 2px solid var(--neon-red);
+    background: rgba(20,0,0,0.9);
+    border: 2px solid #ff0000;
     box-shadow:
-        0 0 20px var(--neon-red),
-        inset 0 0 20px rgba(255, 0, 0, 0.1);
+        0 0 20px #ff0000,
+        inset 0 0 20px rgba(255,0,0,0.1);
     padding: 40px;
     border-radius: 0;
     width: 100%;
@@ -110,8 +94,8 @@ body::before {
     top: -50px;
     left: 0;
     right: 0;
-    background: var(--neon-red);
-    color: var(--terminal-bg);
+    background: #ff0000;
+    color: #0d0d0d;
     padding: 10px 0;
     font-size: 0.8rem;
     animation: bootMessage 4s ease-out forwards;
@@ -134,20 +118,19 @@ body::before {
 }
 .glitch::before {
     animation: glitch-anim 2s infinite linear alternate-reverse;
-    color: var(--hacker-red);
+    color: #ff0000;
     left: 2px;
-    text-shadow: -2px 0 var(--hacker-red);
+    text-shadow: -2px 0 #ff0000;
     clip: rect(44px, 450px, 56px, 0);
 }
 .glitch::after {
     animation: glitch-anim2 2s infinite linear alternate-reverse;
-    color: var(--neon-pink);
+    color: #ff5555;
     left: -2px;
-    text-shadow: -1px 0 var(--neon-pink);
+    text-shadow: -1px 0 #ff5555;
     clip: rect(40px, 450px, 60px, 0);
 }
 
-/* HEADLINE */
 h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -156,11 +139,11 @@ h1 {
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: var(--neon-red);
+    color: #ff0000;
     text-shadow:
-        0 0 10px var(--neon-red),
-        0 0 20px var(--neon-red),
-        0 0 30px var(--neon-red);
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 30px #ff0000;
     position: relative;
 }
 h1::after {
@@ -171,23 +154,22 @@ h1::after {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, var(--neon-red), var(--neon-pink));
-    box-shadow: 0 0 10px var(--neon-red);
+    background: linear-gradient(90deg, transparent, #ff0000, #ff5555);
+    box-shadow: 0 0 10px #ff0000;
 }
 
-/* INPUT */
 input[type="text"] {
     width: 100%;
     padding: 20px;
     margin-bottom: 25px;
     background: rgba(255,0,0,0.1);
-    border: 2px solid var(--neon-red);
+    border: 2px solid #ff0000;
     border-radius: 0;
     font-size: 1.1rem;
-    color: var(--neon-red);
+    color: #ff0000;
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    text-shadow: 0 0 5px var(--neon-red);
+    text-shadow: 0 0 5px #ff0000;
     transition: all 0.3s ease;
     box-shadow:
         0 0 15px rgba(255,0,0,0.3),
@@ -195,24 +177,23 @@ input[type="text"] {
 }
 input[type="text"]:focus {
     outline: none;
-    border-color: var(--neon-pink);
+    border-color: #ff5555;
     box-shadow:
-        0 0 25px var(--neon-pink),
-        inset 0 0 15px rgba(255,77,109,0.2);
+        0 0 25px #ff5555,
+        inset 0 0 15px rgba(255,85,85,0.2);
     transform: scale(1.02);
 }
 input[type="text"]::placeholder {
     color: rgba(255,0,0,0.5);
 }
 
-/* BUTTONS (search & copy) */
 button {
     width: 100%;
     padding: 20px;
-    border: 2px solid var(--neon-red);
+    border: 2px solid #ff0000;
     border-radius: 0;
     background: transparent;
-    color: var(--neon-red);
+    color: #ff0000;
     font-size: 1.1rem;
     font-family: 'Orbitron', monospace;
     font-weight: 700;
@@ -221,14 +202,14 @@ button {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    text-shadow: 0 0 5px var(--neon-red);
+    text-shadow: 0 0 5px #ff0000;
     box-shadow: 0 0 15px rgba(255,0,0,0.3);
 }
 button:hover:not(:disabled) {
-    background: var(--neon-red);
-    color: var(--terminal-bg);
+    background: #ff0000;
+    color: #0d0d0d;
     box-shadow:
-        0 0 30px var(--neon-red),
+        0 0 30px #ff0000,
         inset 0 0 20px rgba(255,0,0,0.3);
     transform: translateY(-3px);
     animation: pulse 1s infinite;
@@ -238,41 +219,40 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* COPY BUTTON */
 #copy-button {
-    border-color: var(--neon-pink);
-    color: var(--neon-pink);
-    box-shadow: 0 0 15px rgba(255,77,109,0.3);
+    border-color: #ff5555;
+    color: #ff5555;
+    box-shadow: 0 0 15px rgba(255,85,85,0.3);
     display: none;
 }
 #copy-button:hover:not(:disabled) {
-    background: var(--neon-pink);
-    color: var(--terminal-bg);
-    box-shadow: 0 0 30px var(--neon-pink);
+    background: #ff5555;
+    color: #0d0d0d;
+    box-shadow: 0 0 30px #ff5555;
 }
 
 /* RESULTS */
 #results-container {
     margin-top: 30px;
     padding-top: 25px;
-    border-top: 1px solid var(--neon-red);
+    border-top: 1px solid #ff0000;
 }
 #results-container h2 {
     margin-bottom: 20px;
     font-size: 1.5rem;
-    color: var(--neon-pink);
+    color: #ff5555;
     font-family: 'Orbitron', monospace;
     font-weight: 900;
-    text-shadow: 0 0 10px var(--neon-pink);
+    text-shadow: 0 0 10px #ff5555;
 }
 #results {
-    background: rgba(40,0,0,0.8);
-    border: 1px solid var(--neon-red);
+    background: rgba(20,0,0,0.8);
+    border: 1px solid #ff0000;
     padding: 25px;
     border-radius: 0;
     min-height: 150px;
     overflow-x: auto;
-    color: var(--matrix-red);
+    color: #ff2222;
     font-size: 1rem;
     font-family: 'Roboto Mono', monospace;
     line-height: 1.6;
@@ -283,26 +263,6 @@ button:disabled {
     position: relative;
 }
 
-/* LOADING & ERROR */
-.loading {
-    text-align: center;
-    color: var(--neon-pink);
-    font-weight: 700;
-    font-size: 1.1rem;
-    animation: blink 1s infinite;
-}
-.loading::after {
-    content: '█';
-    animation: blink 0.5s infinite;
-    margin-left: 10px;
-}
-.error-message {
-    color: var(--hacker-red) !important;
-    text-shadow: 0 0 10px var(--hacker-red);
-    animation: shake 0.5s ease-in-out;
-}
-
-/* FOOTER */
 .footer-text {
     text-align: center;
     margin-top: 30px;
@@ -312,35 +272,30 @@ button:disabled {
     animation: flicker 2s infinite;
 }
 
-/* ANIMATIONS SAME AS BEFORE */
+/* ANIMATIONS */
 @keyframes terminalBoot {0%{opacity:0;transform:scale(0.8) rotateX(90deg);}100%{opacity:1;transform:scale(1) rotateX(0);}}
 @keyframes bootMessage {0%{top:-50px;opacity:1;}80%{opacity:1;}100%{top:-50px;opacity:0;}}
 @keyframes glitch-anim {0%{clip:rect(40px,9999px,60px,0);transform:skew(0.6deg);}5%{clip:rect(17px,9999px,83px,0);transform:skew(0.4deg);}15%{clip:rect(40px,9999px,60px,0);transform:skew(0.2deg);}20%{clip:rect(66px,9999px,41px,0);transform:skew(0.8deg);}100%{clip:rect(40px,9999px,60px,0);transform:skew(0.6deg);}}
 @keyframes glitch-anim2 {0%{clip:rect(65px,9999px,79px,0);transform:skew(0.2deg);}5%{clip:rect(29px,9999px,73px,0);transform:skew(0.8deg);}15%{clip:rect(51px,9999px,89px,0);transform:skew(0.1deg);}20%{clip:rect(17px,9999px,86px,0);transform:skew(0.3deg);}100%{clip:rect(65px,9999px,79px,0);transform:skew(0.2deg);}}
 @keyframes scanline {0%,100%{transform:translateY(0);}50%{transform:translateY(1px);}}
-@keyframes pulse {0%,100%{box-shadow:0 0 30px var(--neon-red);}50%{box-shadow:0 0 50px var(--neon-red),0 0 70px var(--neon-red);}}
-@keyframes blink {0%,50%{opacity:1;}51%,100%{opacity:0.3;}}
-@keyframes shake {0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+@keyframes pulse {0%,100%{box-shadow:0 0 30px #ff0000;}50%{box-shadow:0 0 50px #ff0000,0 0 70px #ff0000;}}
 @keyframes flicker {0%,18%,22%,25%,53%,57%,100%{opacity:1;}20%,24%,55%{opacity:0.4;}}
-
-@media (max-width:600px){.container{padding:30px 20px;margin:10px;}h1{font-size:2rem;letter-spacing:2px;}}
+@media(max-width:600px){.container{padding:30px 20px;margin:10px;}h1{font-size:2rem;letter-spacing:2px;}}
 </style>
 </head>
 <body>
 <canvas id="matrix-bg"></canvas>
 <div class="container">
-<h1 class="glitch" data-text="BURHAN NOIR DATABASE" aria-label="BURHAN NOIR DATABASE">
-   BURHAN NOIR DATABASE
-</h1>
+<h1 class="glitch" data-text="BURHAN NOIR DATABASE">BURHAN NOIR DATABASE</h1>
 
 <input type="text" id="phone-number" placeholder="ENTER TARGET: 03xxxxxxxxx / CNIC xxxxx-xxxxxxx-x" required>
 
 <button id="search-button">EXECUTE HACK</button>
 
 <div id="results-container">
-    <h2>DECRYPTED DATA</h2>
-    <pre id="results"></pre>
-    <button id="copy-button">EXTRACT DATA</button>
+<h2>DECRYPTED DATA</h2>
+<pre id="results"></pre>
+<button id="copy-button">EXTRACT DATA</button>
 </div>
 </div>
 
@@ -349,36 +304,161 @@ button:disabled {
 <a class="wa-dark" href="https://whatsapp.com/channel/0029VbCIDRyLSmbVwRsohX2X" target="_blank">📢 JOIN WHATSAPP CHANNEL</a>
 
 <div class="footer-text">
-    SYSTEM ONLINE | burhan noir | developed by ghosty
+SYSTEM ONLINE | burhan noir | developed by ghosty
 </div>
 
-<script>
-// MATRIX RAIN EFFECT
-const canvas = document.getElementById('matrix-bg');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ';
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(10,10,10,0.05)';
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = '#ff5555';
-    ctx.font = `${fontSize}px monospace`;
-    drops.forEach((y,i)=>{
-        const text = chars[Math.floor(Math.random()*chars.length)];
-        ctx.fillText(text,i*fontSize,y*fontSize);
-        if(y*fontSize>canvas.height && Math.random()>0.975){drops[i]=0;}
-        drops[i]++;
-    });
-}
-setInterval(drawMatrix,50);
-window.addEventListener('resize',()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
+<script>  
+    // MATRIX RAIN EFFECT  
+    const canvas = document.getElementById('matrix-bg');  
+    const ctx = canvas.getContext('2d');  
+    canvas.width = window.innerWidth;  
+    canvas.height = window.innerHeight;  
+      
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ';  
+    const fontSize = 14;  
+    const columns = canvas.width / fontSize;  
+    const drops = Array(Math.floor(columns)).fill(1);  
+      
+    function drawMatrix() {  
+        ctx.fillStyle = 'rgba(10,10,10,0.05)';  
+        ctx.fillRect(0, 0, canvas.width, canvas.height);  
+          
+        ctx.fillStyle = '#00ff41';  
+        ctx.font = `${fontSize}px monospace`;  
+          
+        drops.forEach((y, i) => {  
+            const text = chars[Math.floor(Math.random() * chars.length)];  
+            ctx.fillText(text, i * fontSize, y * fontSize);  
+              
+            if (y * fontSize > canvas.height && Math.random() > 0.975) {  
+                drops[i] = 0;  
+            }  
+            drops[i]++;  
+        });  
+    }  
+      
+    setInterval(drawMatrix, 50);  
+
+    // RESIZE HANDLER  
+    window.addEventListener('resize', () => {  
+        canvas.width = window.innerWidth;  
+        canvas.height = window.innerHeight;  
+    });  
+
+    // ORIGINAL JAVASCRIPT (unchanged functionality)  
+    const API_BASE_URL = 'https://sim-data.ftgmhacks.workers.dev/';   
+    const phoneNumberInput = document.getElementById('phone-number');  
+    const searchButton = document.getElementById('search-button');  
+    const resultsDiv = document.getElementById('results');  
+    const copyButton = document.getElementById('copy-button');  
+
+    function displayError(message) {  
+        resultsDiv.innerHTML = `<span class="error-message">🔥 SYSTEM ERROR 🔥</span>\n\n${message}\n\nTARGET NOT FOUND.`;  
+        copyButton.style.display = 'none';  
+    }  
+
+    async function searchDatabase() {  
+        const number = phoneNumberInput.value.trim();  
+          
+        if (!number) {  
+            displayError("TARGET REQUIRED");  
+            return;  
+        }  
+
+        resultsDiv.innerHTML = `<div class="loading">DECRYPTING TARGET DATA...</div>`;  
+        copyButton.style.display = 'none';  
+        searchButton.disabled = true;  
+        searchButton.innerText = 'HACKING...';  
+
+        try {  
+            const url = `${API_BASE_URL}?number=${encodeURIComponent(number)}`;  
+            const response = await fetch(url);  
+              
+            if (!response.ok) {  
+                throw new Error(`HTTP ${response.status}`);  
+            }  
+              
+            const data = await response.json();  
+              
+            let records = [];  
+            if (Array.isArray(data)) {  
+                records = data;  
+            } else if (data && Array.isArray(data.detail)) {  
+                records = data.detail;  
+            } else if (data && Array.isArray(data.records)) {  
+                records = data.records;  
+            } else if (data && Array.isArray(data.data)) {  
+                records = data.data;  
+            }  
+              
+            if (records.length > 0) {  
+                const resultText = records.map(record => {  
+                    return `╔══════════════════════════════════════╗
+
+║ TARGET ACQUIRED: ${record.name || record.owner || 'UNKNOWN'} ║
+║ PHONE: ${record.mobile || record.number || 'N/A'}             ║
+║ CNIC:  ${record.cNIC || record.cnic || record.idcard || 'N/A'}║
+║ LOCATION: ${record.address || record.location || 'N/A'}      ║
+╚══════════════════════════════════════╝`.trim();
+}).join('\n\n');
+
+resultsDiv.innerText = resultText;  
+                copyButton.style.display = 'block';  
+            } else {  
+                displayError(`TARGET ${number} - NO DATA FOUND`);  
+            }  
+
+        } catch (error) {  
+            console.error('ERROR:', error);  
+            displayError('CONNECTION LOST - FIREWALL DETECTED');  
+        } finally {  
+            searchButton.disabled = false;  
+            searchButton.innerText = 'EXECUTE HACK';  
+        }  
+    }  
+
+    function copyResults() {  
+        const textToCopy = resultsDiv.innerText;  
+        if (!textToCopy || textToCopy.includes('ERROR') || textToCopy.includes('TARGET REQUIRED')) {  
+             alert("⚠️ NO DATA TO EXTRACT");  
+             return;  
+        }  
+
+        if (navigator.clipboard) {  
+            navigator.clipboard.writeText(textToCopy).then(() => {  
+                alert('✅ DATA EXTRACTED');  
+            }).catch(err => {  
+                fallbackCopyText(textToCopy);  
+            });  
+        } else {  
+            fallbackCopyText(textToCopy);  
+        }  
+    }  
+
+    function fallbackCopyText(text) {  
+        var textArea = document.createElement("textarea");  
+        textArea.value = text;  
+        textArea.style.position = "fixed";  
+        document.body.appendChild(textArea);  
+        textArea.focus();  
+        textArea.select();  
+        try {  
+            document.execCommand('copy');  
+            alert('✅ DATA EXTRACTED (BACKDOOR)');  
+        } catch (err) {  
+            alert('❌ EXTRACTION FAILED');  
+        }  
+        document.body.removeChild(textArea);  
+    }  
+
+    searchButton.addEventListener('click', searchDatabase);  
+    copyButton.addEventListener('click', copyResults);  
+    phoneNumberInput.addEventListener('keypress', (e) => {  
+        if (e.key === 'Enter') {  
+            searchDatabase();  
+        }  
+    });  
 </script>
-</body>
+
+</body>  
 </html>
