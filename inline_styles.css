@@ -1,0 +1,375 @@
+
+        /* --- HACKER TERMINAL / CYBERPUNK STYLE --- */
+        :root {
+            --neon-green: #00ff41;
+            --neon-blue: #00d9ff;
+            --neon-purple: #ff00ff;
+            --matrix-green: #00ff88;
+            --hacker-red: #ff4757;
+            --terminal-bg: #0a0a0a;
+            --terminal-green: #00ff41;
+            --scanline-glow: rgba(0, 255, 65, 0.3);
+            --glitch-red: rgba(255, 71, 87, 0.8);
+            --glitch-blue: rgba(0, 217, 255, 0.8);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: var(--terminal-bg);
+            color: var(--neon-green);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            cursor: crosshair;
+        }
+        
+        /* MATRIX RAIN BACKGROUND */
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.1;
+        }
+        
+        /* CRT SCANLINES */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 49%, rgba(0,255,65,0.03) 50%, transparent 51%),
+                linear-gradient(rgba(0,255,65,0.1) 50%, rgba(0,255,65,0.2) 51%),
+                linear-gradient(90deg, transparent 49%, rgba(0,255,65,0.03) 50%, transparent 51%);
+            background-size: 2px 100%, 2px 4px, 200px 1px;
+            animation: scanline 0.1s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* HACKER TERMINAL */
+        .container {
+            background: rgba(0, 20, 20, 0.9);
+            border: 2px solid var(--neon-green);
+            box-shadow: 
+                0 0 20px var(--neon-green),
+                inset 0 0 20px rgba(0, 255, 65, 0.1);
+            padding: 40px;
+            border-radius: 0;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
+            animation: terminalBoot 2s ease-out;
+            font-family: 'Orbitron', monospace;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: 'ACCESSING HACKER DATABASE v2.1...';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            background: var(--neon-green);
+            color: var(--terminal-bg);
+            padding: 10px 0;
+            font-size: 0.8rem;
+            animation: bootMessage 4s ease-out forwards;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        /* GLITCH EFFECT */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+            color: var(--glitch-red);
+            left: 2px;
+            text-shadow: -2px 0 var(--hacker-red);
+            clip: rect(44px, 450px, 56px, 0);
+        }
+        
+        .glitch::after {
+            animation: glitch-anim2 2s infinite linear alternate-reverse;
+            color: var(--glitch-blue);
+            left: -2px;
+            text-shadow: -1px 0 var(--neon-blue);
+            clip: rect(40px, 450px, 60px, 0);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--neon-green);
+            text-shadow: 
+                0 0 10px var(--neon-green),
+                0 0 20px var(--neon-green),
+                0 0 30px var(--neon-green);
+            position: relative;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-green), var(--neon-blue));
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 25px;
+            background: rgba(0, 255, 65, 0.1);
+            border: 2px solid var(--neon-green);
+            border-radius: 0;
+            font-size: 1.1rem;
+            color: var(--neon-green);
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 400;
+            text-shadow: 0 0 5px var(--neon-green);
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 0 15px rgba(0, 255, 65, 0.3),
+                inset 0 0 10px rgba(0, 255, 65, 0.1);
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 
+                0 0 25px var(--neon-blue),
+                inset 0 0 15px rgba(0, 217, 255, 0.2);
+            transform: scale(1.02);
+        }
+        
+        input[type="text"]::placeholder {
+            color: rgba(0, 255, 65, 0.5);
+        }
+        
+        button {
+            width: 100%;
+            padding: 20px;
+            border: 2px solid var(--neon-green);
+            border-radius: 0;
+            background: transparent;
+            color: var(--neon-green);
+            font-size: 1.1rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 5px var(--neon-green);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+        }
+        
+        button:hover:not(:disabled) {
+            background: var(--neon-green);
+            color: var(--terminal-bg);
+            box-shadow: 
+                0 0 30px var(--neon-green),
+                inset 0 0 20px rgba(0, 255, 65, 0.3);
+            transform: translateY(-3px);
+            animation: pulse 1s infinite;
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #copy-button {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+            display: none;
+        }
+        
+        #copy-button:hover:not(:disabled) {
+            background: var(--neon-blue);
+            color: var(--terminal-bg);
+            box-shadow: 0 0 30px var(--neon-blue);
+        }
+
+        #whatsapp-button {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid var(--neon-purple);
+            border-radius: 0;
+            color: var(--neon-purple);
+            background: transparent;
+            text-decoration: none;
+            margin: 25px 0;
+            font-weight: 700;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+        
+        #whatsapp-button:hover {
+            background: var(--neon-purple);
+            color: var(--terminal-bg);
+            box-shadow: 0 0 30px var(--neon-purple);
+            transform: translateY(-3px);
+        }
+
+        #results-container {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid var(--neon-green);
+        }
+        
+        #results-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+        
+        #results {
+            background: rgba(0, 20, 20, 0.8);
+            border: 1px solid var(--neon-green);
+            padding: 25px;
+            border-radius: 0;
+            min-height: 150px;
+            overflow-x: auto;
+            color: var(--matrix-green);
+            font-size: 1rem;
+            font-family: 'Roboto Mono', monospace;
+            line-height: 1.6;
+            box-shadow: 
+                inset 0 0 15px rgba(0, 255, 65, 0.2),
+                0 0 20px rgba(0, 255, 65, 0.1);
+            white-space: pre-wrap;
+            position: relative;
+        }
+        
+        .loading {
+            text-align: center;
+            color: var(--neon-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+            animation: blink 1s infinite;
+        }
+        
+        .loading::after {
+            content: '█';
+            animation: blink 0.5s infinite;
+            margin-left: 10px;
+        }
+        
+        .error-message {
+            color: var(--hacker-red) !important;
+            text-shadow: 0 0 10px var(--hacker-red);
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: rgba(0, 255, 65, 0.5);
+            font-family: 'Roboto Mono', monospace;
+            animation: flicker 2s infinite;
+        }
+
+        /* ANIMATIONS */
+        @keyframes terminalBoot {
+            0% { opacity: 0; transform: scale(0.8) rotateX(90deg); }
+            100% { opacity: 1; transform: scale(1) rotateX(0); }
+        }
+        
+        @keyframes bootMessage {
+            0% { top: -50px; opacity: 1; }
+            80% { opacity: 1; }
+            100% { top: -50px; opacity: 0; }
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(40px, 9999px, 60px, 0); transform: skew(0.6deg); }
+            5% { clip: rect(17px, 9999px, 83px, 0); transform: skew(0.4deg); }
+            15% { clip: rect(40px, 9999px, 60px, 0); transform: skew(0.2deg); }
+            20% { clip: rect(66px, 9999px, 41px, 0); transform: skew(0.8deg); }
+            100% { clip: rect(40px, 9999px, 60px, 0); transform: skew(0.6deg); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 79px, 0); transform: skew(0.2deg); }
+            5% { clip: rect(29px, 9999px, 73px, 0); transform: skew(0.8deg); }
+            15% { clip: rect(51px, 9999px, 89px, 0); transform: skew(0.1deg); }
+            20% { clip: rect(17px, 9999px, 86px, 0); transform: skew(0.3deg); }
+            100% { clip: rect(65px, 9999px, 79px, 0); transform: skew(0.2deg); }
+        }
+        
+        @keyframes scanline {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(1px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 30px var(--neon-green); }
+            50% { box-shadow: 0 0 50px var(--neon-green), 0 0 70px var(--neon-green); }
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.4; }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; margin: 10px; }
+            h1 { font-size: 2rem; letter-spacing: 2px; }
+        }
+    
