@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,35 +6,35 @@
 <title>BURHAN NOIR DATABASE</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-/* WHATSAPP DARK GREEN BUTTONS */
+/* WHATSAPP BUTTONS */
 .wa-dark {
     display: block;
     width: 100%;
-    padding: 20px;
-    margin: 15px 0;
-    border: 2px solid #075E54;
-    background: #075E54;
-    color: #ffffff;
+    padding: 18px;
+    margin: 12px 0;
+    border: 2px solid #ff0000;
+    background: #ff0000;
+    color: #0d0d0d;
     font-family: 'Orbitron', monospace;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(7, 94, 84, 0.5);
+    box-shadow: 0 0 15px rgba(255,0,0,0.5);
     transition: all 0.3s ease;
 }
 .wa-dark:hover {
-    background: #128C7E;
-    box-shadow: 0 0 30px rgba(18, 140, 126, 0.7);
-    transform: translateY(-3px);
+    background: #ff5555;
+    box-shadow: 0 0 25px rgba(255,85,85,0.7);
+    transform: translateY(-2px);
 }
 
 body {
     font-family: 'Roboto Mono', monospace;
-    background: #0d0d0d; /* terminal background */
-    color: #ff0000;      /* red UI */
+    background: #0d0d0d;
+    color: #ff0000;
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -77,10 +77,10 @@ body::before {
     box-shadow:
         0 0 20px #ff0000,
         inset 0 0 20px rgba(255,0,0,0.1);
-    padding: 40px;
-    border-radius: 0;
-    width: 100%;
-    max-width: 600px;
+    padding: 30px 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px;
     margin: 20px auto;
     position: relative;
     animation: terminalBoot 2s ease-out;
@@ -91,13 +91,13 @@ body::before {
 .container::before {
     content: 'ACCESSING HACKER DATABASE v2.1...';
     position: absolute;
-    top: -50px;
+    top: -40px;
     left: 0;
     right: 0;
     background: #ff0000;
     color: #0d0d0d;
-    padding: 10px 0;
-    font-size: 0.8rem;
+    padding: 8px 0;
+    font-size: 0.75rem;
     animation: bootMessage 4s ease-out forwards;
     text-align: center;
     font-weight: 700;
@@ -133,54 +133,54 @@ body::before {
 
 h1 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: 'Orbitron', monospace;
     font-weight: 900;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     color: #ff0000;
     text-shadow:
-        0 0 10px #ff0000,
-        0 0 20px #ff0000,
-        0 0 30px #ff0000;
+        0 0 8px #ff0000,
+        0 0 15px #ff0000,
+        0 0 25px #ff0000;
     position: relative;
 }
 h1::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
+    width: 80px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, #ff0000, #ff5555);
-    box-shadow: 0 0 10px #ff0000;
+    box-shadow: 0 0 8px #ff0000;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 20px;
-    margin-bottom: 25px;
+    padding: 15px;
+    margin-bottom: 20px;
     background: rgba(255,0,0,0.1);
     border: 2px solid #ff0000;
-    border-radius: 0;
-    font-size: 1.1rem;
+    border-radius: 5px;
+    font-size: 1rem;
     color: #ff0000;
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     text-shadow: 0 0 5px #ff0000;
     transition: all 0.3s ease;
     box-shadow:
-        0 0 15px rgba(255,0,0,0.3),
-        inset 0 0 10px rgba(255,0,0,0.1);
+        0 0 12px rgba(255,0,0,0.3),
+        inset 0 0 8px rgba(255,0,0,0.1);
 }
 input[type="text"]:focus {
     outline: none;
     border-color: #ff5555;
     box-shadow:
-        0 0 25px #ff5555,
-        inset 0 0 15px rgba(255,85,85,0.2);
+        0 0 20px #ff5555,
+        inset 0 0 12px rgba(255,85,85,0.2);
     transform: scale(1.02);
 }
 input[type="text"]::placeholder {
@@ -189,12 +189,12 @@ input[type="text"]::placeholder {
 
 button {
     width: 100%;
-    padding: 20px;
+    padding: 18px;
     border: 2px solid #ff0000;
-    border-radius: 0;
+    border-radius: 5px;
     background: transparent;
     color: #ff0000;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: 'Orbitron', monospace;
     font-weight: 700;
     text-transform: uppercase;
@@ -203,15 +203,15 @@ button {
     position: relative;
     overflow: hidden;
     text-shadow: 0 0 5px #ff0000;
-    box-shadow: 0 0 15px rgba(255,0,0,0.3);
+    box-shadow: 0 0 12px rgba(255,0,0,0.3);
 }
 button:hover:not(:disabled) {
     background: #ff0000;
     color: #0d0d0d;
     box-shadow:
-        0 0 30px #ff0000,
-        inset 0 0 20px rgba(255,0,0,0.3);
-    transform: translateY(-3px);
+        0 0 25px #ff0000,
+        inset 0 0 15px rgba(255,0,0,0.3);
+    transform: translateY(-2px);
     animation: pulse 1s infinite;
 }
 button:disabled {
@@ -222,53 +222,56 @@ button:disabled {
 #copy-button {
     border-color: #ff5555;
     color: #ff5555;
-    box-shadow: 0 0 15px rgba(255,85,85,0.3);
+    box-shadow: 0 0 12px rgba(255,85,85,0.3);
     display: none;
 }
 #copy-button:hover:not(:disabled) {
     background: #ff5555;
     color: #0d0d0d;
-    box-shadow: 0 0 30px #ff5555;
+    box-shadow: 0 0 25px #ff5555;
 }
 
 /* RESULTS */
 #results-container {
-    margin-top: 30px;
-    padding-top: 25px;
+    margin-top: 25px;
+    padding-top: 20px;
     border-top: 1px solid #ff0000;
 }
 #results-container h2 {
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    color: #ff5555;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    color: #5555ff;
     font-family: 'Orbitron', monospace;
     font-weight: 900;
-    text-shadow: 0 0 10px #ff5555;
+    text-shadow: 0 0 10px #5555ff;
 }
 #results {
     background: rgba(20,0,0,0.8);
     border: 1px solid #ff0000;
-    padding: 25px;
-    border-radius: 0;
-    min-height: 150px;
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 120px;
     overflow-x: auto;
     color: #ff2222;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-family: 'Roboto Mono', monospace;
-    line-height: 1.6;
+    line-height: 1.5;
     box-shadow:
-        inset 0 0 15px rgba(255,0,0,0.2),
-        0 0 20px rgba(255,0,0,0.1);
+        inset 0 0 12px rgba(255,0,0,0.2),
+        0 0 15px rgba(255,0,0,0.1);
     white-space: pre-wrap;
     position: relative;
 }
 
+/* FOOTER BLUE SHINING TEXT */
 .footer-text {
     text-align: center;
-    margin-top: 30px;
-    font-size: 0.8rem;
-    color: rgba(255,0,0,0.5);
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #00f0ff;
     font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff;
     animation: flicker 2s infinite;
 }
 
@@ -280,7 +283,16 @@ button:disabled {
 @keyframes scanline {0%,100%{transform:translateY(0);}50%{transform:translateY(1px);}}
 @keyframes pulse {0%,100%{box-shadow:0 0 30px #ff0000;}50%{box-shadow:0 0 50px #ff0000,0 0 70px #ff0000;}}
 @keyframes flicker {0%,18%,22%,25%,53%,57%,100%{opacity:1;}20%,24%,55%{opacity:0.4;}}
-@media(max-width:600px){.container{padding:30px 20px;margin:10px;}h1{font-size:2rem;letter-spacing:2px;}}
+
+@media(max-width:480px){
+    .container{padding:20px 15px;width:95%;}
+    h1{font-size:1.75rem;letter-spacing:2px;}
+    input[type="text"]{padding:12px;font-size:0.95rem;}
+    button{padding:15px;font-size:0.95rem;}
+    #results-container h2{font-size:1.1rem;}
+    #results{padding:15px;}
+    .wa-dark{padding:15px;font-size:0.95rem;}
+}
 </style>
 </head>
 <body>
@@ -299,12 +311,12 @@ button:disabled {
 </div>
 </div>
 
-<!-- WhatsApp Dark Green Buttons -->
+<!-- WhatsApp Buttons -->
 <a class="wa-dark" href="https://chat.whatsapp.com/HVM9Spvm7HVGLERj8yo9kS" target="_blank">👥 JOIN WHATSAPP GROUP</a>
 <a class="wa-dark" href="https://whatsapp.com/channel/0029VbCIDRyLSmbVwRsohX2X" target="_blank">📢 JOIN WHATSAPP CHANNEL</a>
 
 <div class="footer-text">
-SYSTEM ONLINE | burhan noir | developed by ghosty
+SYSTEM ONLINE | BURHAN NOIR | DEVELOPED by GHOSTY
 </div>
 
 <script>  
